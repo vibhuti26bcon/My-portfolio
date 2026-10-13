@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vibhuti - Final Year B.Tech CSE Student at JECRC University, Jaipur. Software Engineer, Full-Stack Developer, and DSA Enthusiast.">
+  <meta name="keywords" content="Vibhuti, JECRC University, B.Tech CSE, Jaipur, Software Engineer, Web Developer, Portfolio, Resume, C++, Java, React">
+  <meta name="author" content="Vibhuti">
+  <title>Vibhuti | Final Year B.Tech CSE | Resume & Portfolio</title>
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Matrix Rain Canvas -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-top-right"></div>
+  <div class="ambient-glow glow-bottom-left"></div>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#home" class="nav-brand">
+        <span class="brand-tag">&lt;</span>Vibhuti <span class="brand-tag">/&gt;</span>
+        <span class="cursor-blink"></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills & Certs</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Interactive Terminal Modal Launcher -->
+        <button class="btn-terminal-toggle" id="btn-open-terminal-nav" title="Launch Interactive Terminal">
+          <span>&gt;_</span> CLI <span class="kbd">~</span>
+        </button>
+
+        <!-- 1-Click Resume Print/Download -->
+        <button class="btn-resume" onclick="window.print()" title="Print or Save Resume as PDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Resume PDF
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION (HOME)
+       ========================================================================= -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      
+      <!-- Left Hero Column -->
+      <div class="hero-content">
+        <div class="hero-badge-container">
+          <span class="status-badge">
+            <span class="pulse-dot"></span>
+            Final Year B.Tech CSE • JECRC University, Jaipur
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Vibhuti</span>
+        </h1>
+
+        <div class="hero-typewriter">
+          <span class="prefix">I am an aspiring</span>
+          <span id="typewriter-text"></span>
+          <span class="typing-cursor"></span>
+        </div>
+
+        <p class="hero-description">
+          A passionate Computer Science student graduating from <strong>JECRC University, Jaipur</strong>. Focused on building efficient, scalable software, mastering Data Structures & Algorithms, and crafting modern full-stack web solutions. Excited to step into the software industry and engineer impactful technology.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-primary">
+            Explore My Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#contact" class="btn-outline">
+            Get in Touch
+          </a>
+          <button class="btn-outline" id="btn-open-terminal-hero" onclick="document.getElementById('btn-open-terminal-nav').click()">
+            <span>&gt;_</span> Open CLI
+          </button>
+        </div>
+
+        <!-- Quick Career Metrics -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">2025</span>
+            <span class="stat-label">Graduating Batch</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">250+</span>
+            <span class="stat-label">DSA Solved</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Verified Certs</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Capstone Projects</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Hero Column: Interactive Coder Visual -->
+      <div class="hero-visual-card">
+        <div class="profile-card-wrapper">
+          <div class="avatar-wrapper">
+            <img src="assets/avatar.svg" alt="Vibhuti - Coder Profile" class="avatar-img">
+            <!-- Orbiting Code Badges -->
+            <span class="orbit-badge badge-cpp">C++ / STL</span>
+            <span class="orbit-badge badge-java">Java Core</span>
+            <span class="orbit-badge badge-react">React.js</span>
+            <span class="orbit-badge badge-dsa">DSA &bull; O(1)</span>
+          </div>
+
+          <h3 class="profile-name">Vibhuti</h3>
+          <p class="profile-role">B.Tech Computer Science &amp; Engineering</p>
+          <p class="profile-uni">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+            JECRC University, Jaipur
+          </p>
+        </div>
+
+        <!-- Interactive VS Code Snippet Card -->
+        <div class="vscode-widget">
+          <div class="widget-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="widget-title">vibhuti.ts — JECRC Developer Profile</span>
+            <button class="btn-copy-code" id="btn-copy-code" title="Copy code to clipboard">
+              📋 Copy
+            </button>
+          </div>
+          <div class="widget-code">
+            <pre><code><span class="code-keyword">interface</span> <span class="code-var">StudentDeveloper</span> {
+  name: <span class="code-string">"Vibhuti"</span>;
+  education: <span class="code-string">"B.Tech CSE @ JECRC University, Jaipur"</span>;
+  status: <span class="code-string">"Final Year (2021-2025)"</span>;
+  focus: [<span class="code-string">"DSA"</span>, <span class="code-string">"FullStack Web"</span>, <span class="code-string">"System Design"</span>];
+  isReadyToInnovate: <span class="code-keyword">true</span>;
+}
+
+<span class="code-comment">// Let's build scalable software together!</span></code></pre>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ABOUT SECTION
+       ========================================================================= -->
+  <section class="section" id="about">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <span>//</span> 01. Background &amp; Profile
+        </span>
+        <h2 class="section-title">My Story, Passion &amp; Academic Journey</h2>
+        <p class="section-subtitle">
+          A glimpse into my background, what drives me in computer science, personal hobbies, and education.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        
+        <!-- Left: Story & Hobbies -->
+        <div class="glass-card">
+          <div class="card-title-icon">
+            <div class="icon-badge">👨‍💻</div>
+            <h3 class="card-heading">The Story &amp; My Passion</h3>
+          </div>
+          
+          <div class="about-story-text">
+            <p>
+              Hello! I am <strong>Vibhuti</strong>, currently in my final year of B.Tech in Computer Science &amp; Engineering at <strong>JECRC University, Jaipur</strong>. My tech journey sparked when I wrote my first lines of code and discovered how algorithmic logic can solve real-world problems.
+            </p>
+            <p>
+              Throughout my academic years, I have immersed myself in data structures, algorithms, object-oriented software engineering, and full-stack web architectures. I enjoy taking an idea from whiteboarding to a clean, deployable application with seamless user experience.
+            </p>
+          </div>
+
+          <!-- Hobbies Grid -->
+          <div class="card-title-icon" style="margin-top: 24px; margin-bottom: 12px;">
+            <div class="icon-badge" style="background: rgba(168, 85, 247, 0.12); color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.25);">🎯</div>
+            <h4 class="card-heading" style="font-size: 1.15rem;">Beyond Coding: My Hobbies &amp; Interests</h4>
+          </div>
+
+          <div class="hobbies-grid">
+            <div class="hobby-item">
+              <span class="hobby-icon">🧩</span>
+              <div>
+                <h5 class="hobby-title">Competitive Coding</h5>
+                <p class="hobby-desc">Solving algorithmic problems on LeetCode &amp; GFG</p>
+              </div>
+            </div>
+
+            <div class="hobby-item">
+              <span class="hobby-icon">📸</span>
+              <div>
+                <h5 class="hobby-title">Photography &amp; Travel</h5>
+                <p class="hobby-desc">Capturing the vibrant heritage and architecture of Jaipur</p>
+              </div>
+            </div>
+
+            <div class="hobby-item">
+              <span class="hobby-icon">🏸</span>
+              <div>
+                <h5 class="hobby-title">Badminton &amp; Sports</h5>
+                <p class="hobby-desc">Staying energetic, agile, and team-oriented</p>
+              </div>
+            </div>
+
+            <div class="hobby-item">
+              <span class="hobby-icon">🎧</span>
+              <div>
+                <h5 class="hobby-title">Music &amp; Podcasts</h5>
+                <p class="hobby-desc">Exploring tech podcasts and creative playlists while designing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Education, Address & Achievements -->
+        <div class="about-right-column">
+          
+          <!-- Education Card -->
+          <div class="glass-card" style="margin-bottom: 24px;">
+            <div class="card-title-icon">
+              <div class="icon-badge">🎓</div>
+              <h3 class="card-heading">Education &amp; Academic Timeline</h3>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2021 – Present (Final Year)</div>
+                <h4 class="timeline-degree">B.Tech in Computer Science &amp; Engineering</h4>
+                <div class="timeline-institution">🏛️ JECRC University, Jaipur, Rajasthan</div>
+                <p class="timeline-details">
+                  Specializing in core computer science, software engineering practices, algorithms, databases, and web frameworks. Actively engaged in technical labs and university capstone projects.
+                </p>
+                <div class="timeline-tags">
+                  <span class="pill-tag">Data Structures</span>
+                  <span class="pill-tag">Algorithms</span>
+                  <span class="pill-tag">DBMS</span>
+                  <span class="pill-tag">Operating Systems</span>
+                  <span class="pill-tag">OOPs</span>
+                  <span class="pill-tag">Computer Networks</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot" style="border-color: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple);"></div>
+                <div class="timeline-year">Senior Secondary &amp; High School</div>
+                <h4 class="timeline-degree">Higher Secondary Education (PCM)</h4>
+                <div class="timeline-institution">🔬 Science Stream (Physics, Chemistry, Mathematics)</div>
+                <p class="timeline-details">
+                  Built a strong foundation in analytical reasoning, advanced mathematics, and scientific problem-solving.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Address & Relocation -->
+          <div class="address-card">
+            <div class="address-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Address &amp; Location
+            </div>
+            <p class="address-text">
+              <strong>JECRC University Campus</strong>, Ramchandrapura, Sitapura Industrial Area Extension, Jaipur, Rajasthan — 303905, India
+            </p>
+            <span class="address-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Open to Relocation &amp; Remote Roles
+            </span>
+          </div>
+
+          <!-- Key Achievements -->
+          <div class="glass-card">
+            <div class="card-title-icon">
+              <div class="icon-badge" style="background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); border-color: rgba(245, 158, 11, 0.25);">🏆</div>
+              <h3 class="card-heading">Key Achievements &amp; Accolades</h3>
+            </div>
+
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="achievement-icon">🥇</span>
+                <div>
+                  <strong>University Hackathon Finalist:</strong> Designed and showcased an interactive web solution addressing student academic productivity.
+                </div>
+              </li>
+              <li class="achievement-item">
+                <span class="achievement-icon">💡</span>
+                <div>
+                  <strong>250+ Coding Questions Solved:</strong> Regular practice across competitive programming platforms in C++ and Java.
+                </div>
+              </li>
+              <li class="achievement-item">
+                <span class="achievement-icon">⭐</span>
+                <div>
+                  <strong>Technical Society Member:</strong> Contributed to organizing peer workshops, seminars, and coding challenges at JECRC University.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SKILLS & OFFICIAL CERTIFICATIONS SECTION
+       ========================================================================= -->
+  <section class="section" id="skills">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <span>//</span> 02. Technical Arsenal
+        </span>
+        <h2 class="section-title">Technical Skills &amp; Official Certifications</h2>
+        <p class="section-subtitle">
+          A comprehensive overview of programming competencies, technologies, and verified credentials gained during my engineering tenure.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="skills-tabs">
+        <button class="tab-btn active" data-filter="all">All Skills</button>
+        <button class="tab-btn" data-filter="lang">Languages</button>
+        <button class="tab-btn" data-filter="web">Web &amp; Backend</button>
+        <button class="tab-btn" data-filter="cs">Core Computer Science</button>
+        <button class="tab-btn" data-filter="tools">Databases &amp; Tools</button>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="skills-grid">
+        
+        <!-- C / C++ -->
+        <div class="skill-card" data-category="lang cs">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">&lt;/&gt;</span>
+              <h4 class="skill-name">C / C++</h4>
+            </div>
+            <span class="skill-level-badge">Proficient • DSA</span>
+          </div>
+          <p>STL, pointers, dynamic memory allocation, complexity analysis &amp; algorithms.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">STL</span>
+            <span class="skill-pill">OOPs</span>
+            <span class="skill-pill">Pointers</span>
+          </div>
+        </div>
+
+        <!-- Java -->
+        <div class="skill-card" data-category="lang cs">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">☕</span>
+              <h4 class="skill-name">Java</h4>
+            </div>
+            <span class="skill-level-badge">Advanced • Core &amp; Collections</span>
+          </div>
+          <p>Object-Oriented Design, Java Collections Framework, Multi-threading, Exception handling.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Collections</span>
+            <span class="skill-pill">OOP</span>
+            <span class="skill-pill">Exception Handling</span>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-card" data-category="lang">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">🐍</span>
+              <h4 class="skill-name">Python</h4>
+            </div>
+            <span class="skill-level-badge">Intermediate • Scripting</span>
+          </div>
+          <p>Scripting, data handling, algorithmic tasks, and backend utilities.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Automation</span>
+            <span class="skill-pill">Data Analysis</span>
+            <span class="skill-pill">File Handling</span>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card" data-category="lang web">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">⚡</span>
+              <h4 class="skill-name">JavaScript (ES6+)</h4>
+            </div>
+            <span class="skill-level-badge">Proficient • Modern Web</span>
+          </div>
+          <p>Asynchronous programming, Promises, Fetch API, DOM manipulation, modular architecture.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">DOM</span>
+            <span class="skill-pill">Async/Await</span>
+            <span class="skill-pill">Promises</span>
+          </div>
+        </div>
+
+        <!-- HTML5 & CSS3 -->
+        <div class="skill-card" data-category="web">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">🎨</span>
+              <h4 class="skill-name">HTML5 &amp; CSS3</h4>
+            </div>
+            <span class="skill-level-badge">Expert • Responsive UI</span>
+          </div>
+          <p>Semantic markup, Flexbox, CSS Grid, mobile-first responsive layouts, keyframe animations.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Flexbox &amp; Grid</span>
+            <span class="skill-pill">Animations</span>
+            <span class="skill-pill">Semantic Web</span>
+          </div>
+        </div>
+
+        <!-- React.js -->
+        <div class="skill-card" data-category="web">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">⚛️</span>
+              <h4 class="skill-name">React.js</h4>
+            </div>
+            <span class="skill-level-badge">Intermediate • Component UI</span>
+          </div>
+          <p>Functional components, React Hooks (useState, useEffect), state management, routing.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Hooks</span>
+            <span class="skill-pill">State Management</span>
+            <span class="skill-pill">Router</span>
+          </div>
+        </div>
+
+        <!-- Node.js & Express -->
+        <div class="skill-card" data-category="web">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">🌐</span>
+              <h4 class="skill-name">Node.js &amp; Express</h4>
+            </div>
+            <span class="skill-level-badge">Intermediate • Backend</span>
+          </div>
+          <p>RESTful APIs, routing, middleware orchestration, JSON tokens authentication, server design.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">REST APIs</span>
+            <span class="skill-pill">Middleware</span>
+            <span class="skill-pill">JSON Auth</span>
+          </div>
+        </div>
+
+        <!-- Data Structures & Algorithms -->
+        <div class="skill-card" data-category="cs">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">🌳</span>
+              <h4 class="skill-name">Data Structures &amp; Algorithms</h4>
+            </div>
+            <span class="skill-level-badge" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.3);">Core Strength</span>
+          </div>
+          <p>Arrays, Linked Lists, Stacks, Queues, Binary Trees, Graphs, Sorting, Searching, Dynamic Programming.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Arrays &amp; Trees</span>
+            <span class="skill-pill">Graphs</span>
+            <span class="skill-pill">Dynamic Programming</span>
+          </div>
+        </div>
+
+        <!-- DBMS & SQL -->
+        <div class="skill-card" data-category="tools cs">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">🗄️</span>
+              <h4 class="skill-name">DBMS &amp; SQL</h4>
+            </div>
+            <span class="skill-level-badge">Proficient • Relational DB</span>
+          </div>
+          <p>Relational schema design, Normalization (1NF to BCNF), Complex queries, Joins, Indexing, MySQL.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Normalization</span>
+            <span class="skill-pill">Indexing &amp; Joins</span>
+          </div>
+        </div>
+
+        <!-- Operating Systems & CN -->
+        <div class="skill-card" data-category="cs">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">⚙️</span>
+              <h4 class="skill-name">Operating Systems &amp; CN</h4>
+            </div>
+            <span class="skill-level-badge">Academic Foundation</span>
+          </div>
+          <p>Process management, CPU scheduling, deadlocks, memory virtualization, TCP/IP, OSI layers.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Concurrency</span>
+            <span class="skill-pill">Memory Mgmt</span>
+            <span class="skill-pill">TCP/IP</span>
+          </div>
+        </div>
+
+        <!-- Git & GitHub -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">🐙</span>
+              <h4 class="skill-name">Git &amp; GitHub</h4>
+            </div>
+            <span class="skill-level-badge">Version Control &amp; Collaboration</span>
+          </div>
+          <p>Branching, commits, pull requests, collaborative workflows, conflict resolution, versioning.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Branching</span>
+            <span class="skill-pill">PR Reviews</span>
+            <span class="skill-pill">CI/CD Basics</span>
+          </div>
+        </div>
+
+        <!-- Developer Tools -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-card-top">
+            <div class="skill-icon-name">
+              <span class="tech-icon">🛠️</span>
+              <h4 class="skill-name">Developer Tools</h4>
+            </div>
+            <span class="skill-level-badge">Daily Workflow</span>
+          </div>
+          <p>Visual Studio Code, Postman for API testing, Linux/Bash terminal commands, Chrome DevTools.</p>
+          <div class="skill-pills">
+            <span class="skill-pill">VS Code</span>
+            <span class="skill-pill">Postman</span>
+            <span class="skill-pill">Linux / Bash</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           OFFICIAL CERTIFICATIONS & CREDENTIALS SUB-SECTION
+           ===================================================================== -->
+      <div class="certs-header">
+        <div class="certs-title-group">
+          <span style="font-size: 1.5rem;">📜</span>
+          <h3 style="font-size: 1.5rem; font-weight: 700;">Official Certifications &amp; Credentials</h3>
+        </div>
+        <span class="certs-count-pill">5 Verified Records</span>
+      </div>
+
+      <div class="certs-grid">
+        
+        <!-- Cert 1: NPTEL DSA -->
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-issuer">NPTEL / MOOC</span>
+            <span class="cert-year">2024</span>
+          </div>
+          <h4 class="cert-title">Data Structures and Algorithms in C++ / Java</h4>
+          <p class="cert-org">Ministry of Education / IIT NPTEL Certification</p>
+          <p class="cert-desc">
+            Comprehensive training in algorithmic complexity, advanced data structures, and computational optimization.
+          </p>
+          <div class="cert-footer">
+            <span class="cert-id">ID: NPTEL24CS91S3</span>
+            <button class="btn-verify" title="Click to view verified credential details">
+              Verify ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 2: HackerRank Problem Solving -->
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-issuer">HackerRank</span>
+            <span class="cert-year">2024</span>
+          </div>
+          <h4 class="cert-title">Problem Solving (Intermediate) Certificate</h4>
+          <p class="cert-org">HackerRank Skills Certification</p>
+          <p class="cert-desc">
+            Certified proficiency in data structures, time complexity analysis, recursion, and dynamic algorithms.
+          </p>
+          <div class="cert-footer">
+            <span class="cert-id">ID: HR-PS-89211</span>
+            <button class="btn-verify" title="Click to view verified credential details">
+              Verify ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 3: Coursera Full Stack -->
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-issuer">Coursera</span>
+            <span class="cert-year">2023</span>
+          </div>
+          <h4 class="cert-title">Full Stack Web Development Foundations</h4>
+          <p class="cert-org">Meta / Coursera Verified Track</p>
+          <p class="cert-desc">
+            Hands-on practical development of responsive front-ends, REST API integration, and asynchronous JavaScript.
+          </p>
+          <div class="cert-footer">
+            <span class="cert-id">ID: COURSERA-FSW-4402</span>
+            <button class="btn-verify" title="Click to view verified credential details">
+              Verify ↗
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 4: Database & SQL Specialist -->
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-issuer">Oracle / University</span>
+            <span class="cert-year">2023</span>
+          </div>
+          <h4 class="cert-title">Database Management Systems &amp; SQL Specialist</h4>
+          <p class="cert-org">JECRC University Academic Excellence Track</p>
+          <p class="cert-desc">
+            Proficiency in SQL query optimization, ER modeling, relational schema design, and transactional ACID properties.
+          </p>
+          <div class="cert-footer">
+            <span class="cert-id">ID: JU-DBMS-2023-VIB</span>
+            <button class="btn-verify" title="Click to view verified credential details">
+              Verify ↗
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FEATURED PROJECTS SECTION
+       ========================================================================= -->
+  <section class="section" id="projects">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <span>//</span> 03. Engineered Software
+        </span>
+        <h2 class="section-title">Featured Academic &amp; Capstone Projects</h2>
+        <p class="section-subtitle">
+          A selection of software and web projects built during my B.Tech CSE studies at JECRC University.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: CampusConnect -->
+        <div class="project-card">
+          <div class="project-terminal-bar">
+            <span class="project-filename">campusconnect.jsx</span>
+            <span class="project-category-badge">Full Stack Web App • Academic Capstone</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">CampusConnect: Student Academic &amp; Resource Portal</h3>
+            <p class="project-desc">
+              A centralized portal designed for university students to share lecture notes, track timetable schedules, collaborate on assignments, and receive real-time campus announcements.
+            </p>
+            <ul class="project-highlights">
+              <li>Role-based access control for students and faculty</li>
+              <li>Secure authentication using JSON Web Tokens (JWT)</li>
+              <li>Clean responsive UI tailored for mobile &amp; desktop</li>
+            </ul>
+            <div class="project-techs">
+              <span class="skill-pill">React.js</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Express</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">JWT Auth</span>
+            </div>
+            <div class="project-actions">
+              <a href="#contact" class="btn-project-link btn-project-primary">
+                Demo Preview ↗
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-link btn-project-secondary">
+                GitHub Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: AlgoVista DSA Visualizer -->
+        <div class="project-card">
+          <div class="project-terminal-bar">
+            <span class="project-filename">algovista.js</span>
+            <span class="project-category-badge">Algorithm &amp; Data Structures Visualizer</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AlgoVista: Interactive DSA Pathfinding &amp; Sorting</h3>
+            <p class="project-desc">
+              An interactive web-based educational visualizer demonstrating Dijkstra's, A*, Merge Sort, and Quick Sort with step-by-step animations and time complexity breakdowns.
+            </p>
+            <ul class="project-highlights">
+              <li>Configurable execution speeds and array sizes</li>
+              <li>Canvas-based real-time node path calculations</li>
+              <li>Comparative Big-O metric cards for learners</li>
+            </ul>
+            <div class="project-techs">
+              <span class="skill-pill">JavaScript (ES6+)</span>
+              <span class="skill-pill">HTML5 Canvas</span>
+              <span class="skill-pill">CSS3 Animations</span>
+              <span class="skill-pill">Algorithms</span>
+            </div>
+            <div class="project-actions">
+              <a href="#contact" class="btn-project-link btn-project-primary">
+                Live Simulator ↗
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-link btn-project-secondary">
+                Source Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Secure Commerce REST API -->
+        <div class="project-card">
+          <div class="project-terminal-bar">
+            <span class="project-filename">api_server.js</span>
+            <span class="project-category-badge">Backend System &amp; REST API</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Secure Commerce RESTful API Engine</h3>
+            <p class="project-desc">
+              Engineered a modular, secure backend microservice handling product catalogs, customer authentication, order processing, and transactional database integrity with role-based access control.
+            </p>
+            <ul class="project-highlights">
+              <li>Comprehensive relational schema with indexing in MySQL</li>
+              <li>Password hashing using Bcrypt and input sanitation</li>
+              <li>Full Postman test collections with 95%+ coverage</li>
+            </ul>
+            <div class="project-techs">
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Express</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">Postman</span>
+              <span class="skill-pill">Bcrypt</span>
+            </div>
+            <div class="project-actions">
+              <a href="#contact" class="btn-project-link btn-project-primary">
+                API Docs ↗
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-link btn-project-secondary">
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CONTACT SECTION
+       ========================================================================= -->
+  <section class="section" id="contact">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <span>//</span> 04. Connect &amp; Collaborate
+        </span>
+        <h2 class="section-title">Get In Touch with Vibhuti</h2>
+        <p class="section-subtitle">
+          Whether you have a full-time software engineering opportunity, an internship, a project collaboration, or just want to say hi!
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Left: Official Contact Card -->
+        <div class="glass-card contact-info-card">
+          <div class="contact-header-block">
+            <img src="assets/avatar.svg" alt="Vibhuti" class="contact-avatar-sm">
+            <h3 style="font-size: 1.4rem; font-weight: 700;">Vibhuti</h3>
+            <p style="color: var(--accent-blue); font-size: 0.9rem;">Final Year B.Tech CSE Student</p>
+          </div>
+
+          <div class="contact-details-list">
+            
+            <!-- Campus Address -->
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">Current Address / Campus</span>
+                <span class="contact-item-val" style="line-height: 1.4;">
+                  JECRC University Campus, Ramchandrapura, Sitapura Industrial Area Extn, Jaipur, Rajasthan - 303905, India
+                </span>
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">Email Address</span>
+                <a href="mailto:vibhuti.cse@jecrc.edu.in" class="contact-item-val">
+                  vibhuti.cse@jecrc.edu.in
+                </a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">Phone &amp; WhatsApp</span>
+                <span class="contact-item-val">
+                  +91 98765 43210 (Available upon request)
+                </span>
+              </div>
+            </div>
+
+            <!-- University Department -->
+            <div class="contact-item">
+              <div class="contact-item-icon">🏛️</div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">Department</span>
+                <span class="contact-item-val">
+                  Department of Computer Science &amp; Engineering, Faculty of Engineering &amp; Technology
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Social Links -->
+          <div class="social-links-group">
+            <p class="social-links-label">Follow / Connect:</p>
+            <div class="social-buttons">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn Profile">
+                <!-- LinkedIn SVG -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub Profile">
+                <!-- GitHub SVG -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="mailto:vibhuti.cse@jecrc.edu.in" class="social-btn" title="Send Direct Email">
+                <!-- Mail SVG -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Message Box -->
+        <div class="glass-card contact-form-card">
+          <div class="card-title-icon" style="margin-bottom: 20px;">
+            <div class="icon-badge">💬</div>
+            <div>
+              <h3 class="card-heading">Send Me a Direct Message</h3>
+              <p style="font-size: 0.84rem; color: var(--text-muted);">Fill out the form below. I typically respond within 24 hours.</p>
+            </div>
+          </div>
+
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="form-name" class="form-label">Your Full Name *</label>
+              <input type="text" id="form-name" class="form-control" placeholder="e.g. Rahul Sharma" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="form-label">Your Email Address *</label>
+              <input type="email" id="form-email" class="form-control" placeholder="e.g. rahul@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-subject" class="form-label">Subject / Purpose</label>
+              <input type="text" id="form-subject" class="form-control" placeholder="e.g. Software Engineering Opportunity / Project Discussion">
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message Content *</label>
+              <textarea id="form-message" class="form-control" maxlength="500" placeholder="Hello Vibhuti, I saw your portfolio and would like to discuss..." required></textarea>
+              <div class="char-counter" id="char-count">0 / 500</div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btn-submit-form">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <div class="form-feedback" id="form-feedback"></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-brand">&lt;Vibhuti /&gt;</span>
+        <p class="footer-copy">
+          Final Year B.Tech CSE • JECRC University, Jaipur &bull; Designed &amp; Engineered with Passion.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <button class="btn-back-to-top" id="btn-back-to-top" title="Scroll back to top">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       FLOATING INTERACTIVE TERMINAL LAUNCHER
+       ========================================================================= -->
+  <button class="terminal-float-pill" id="btn-open-terminal-float" title="Toggle Developer CLI (Hotkey: ~)">
+    <span>&gt;_</span> Terminal <span style="font-size: 0.72rem; opacity: 0.7;">[~]</span>
+  </button>
+
+  <!-- =========================================================================
+       INTERACTIVE CODER CLI MODAL
+       ========================================================================= -->
+  <div class="terminal-modal-overlay" id="terminal-modal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="window-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-title">vibhuti@jecrc-cse:~ (zsh)</span>
+        <button class="terminal-close-btn" id="btn-close-terminal" title="Close Terminal (Esc)">✕</button>
+      </div>
+
+      <div class="terminal-body" id="terminal-body">
+        <div class="term-welcome">
+          ✦ Vibhuti's Interactive Developer Terminal v2.5.0<br>
+          Type <span style="color: #ffffff; font-weight: bold;">help</span> to inspect available commands, or try <span style="color: #00f2fe;">about</span>, <span style="color: #00f2fe;">skills</span>, <span style="color: #00f2fe;">projects</span>, <span style="color: #00f2fe;">sudo hire</span>.
+        </div>
+
+        <div class="term-entry">
+          <div class="term-prompt-line">
+            <span class="term-user">vibhuti@jecrc</span>:<span class="term-path">~</span>$ 
+            <span class="term-command">whoami</span>
+          </div>
+          <div class="term-output">Vibhuti - Final Year B.Tech Computer Science & Engineering Student @ JECRC University, Jaipur.</div>
+        </div>
+
+        <!-- Input row where visitor types -->
+        <div class="term-input-row">
+          <span class="term-user">vibhuti@jecrc</span>:<span class="term-path">~</span>$ 
+          <input type="text" class="term-input" id="terminal-input" autocomplete="off" spellcheck="false" autofocus placeholder="type 'help' or command...">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
